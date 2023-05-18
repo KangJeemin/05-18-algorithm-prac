@@ -5,45 +5,70 @@ let result:boolean
  * input()
  * 
  *  */
- function gamBamBo(me:string,you:string):boolean{
+ function gamBamBo(me:string,you:string){
   let a,b,c;
   a="가위";
   b="바위";
   c="보";
   try{
-    if(me!=c){
-      new Error("에러 발생")
-      return false
-    }
-    else{
-    //가위가 아니거나, 바위가 아니거나, 보가
-  
-  //a=가위,b=바위,c=보
-  
-  //주먹<보
-      if(me===b && you===c){
-        return true;
+    if(me===a){
+      if(you===a){
+        console.log("비겼습니다")
+        return true
       }
-      //가위<주먹
-      else if(me===a && you===b){
-        return false;
+      else if(you===b){
+        console.log("당신이 졌습니다.")
+        return true
+
       }
-      //보<가위
-      else if(me===c && you===a){
-        return true;
-      }
-      else if(me===c && you===b){
-        return true;
-      }
-      else if(me===b && you===a){
-        return true;
-      }
-      else if(me===a && you===c){
-        return true;
+      else if(you===c){
+        console.log("당신이 이겼습니다.")
+        return true
+
       }
       else{
+        console.log("뭐고?")
+        return false
+      }
+    }
+    if(me===b){
+      if(you===b){
         console.log("비겼습니다")
-        return false;
+        return true
+      }
+      else if(you===c){
+        console.log("당신이 졌습니다.")
+        return true
+
+      }
+      else if(you===a){
+        console.log("당신이 이겼습니다.")
+        return true
+
+      }
+      else{
+        console.log("뭐고?")
+        return false
+      }
+    }
+    if(me===c){
+      if(you===c){
+        console.log("비겼습니다")
+        return true
+      }
+      else if(you===b){
+        console.log("당신이 이겼습니다.")
+        return true
+
+      }
+      else if(you===a){
+        console.log("당신이 졌습니다.")
+        return true
+
+      }
+      else{
+        console.log("뭐고?")
+        return false
       }
     }
   }
@@ -53,7 +78,8 @@ let result:boolean
  }
 
 }
+gamBamBo("바위","가위")
 
-result=gamBamBo(random(),random())
-export default result
+// result=gamBamBo(random(),random())
+// export default result
 
